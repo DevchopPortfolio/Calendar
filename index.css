@@ -1,0 +1,72 @@
+
+
+body {    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    background-color: hsl(200, 100%, 80%);
+    margin-bottom: 3rem;
+}
+
+h1 {
+    /* text-align: center; */
+    margin-top: 0;
+    margin-left: 10rem;    
+    padding: 2rem 0;
+    /* height: 5rem; */
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+form {
+    padding-left: 10rem;
+}
+
+#formgrid {    
+    display: grid;
+    grid-template-columns: 9rem 10rem;
+    /* align-items: center; */
+    gap: 2rem;
+    /* background: lightblue; */
+}
+
+
+select {
+    overflow: auto;
+    padding: 0.2rem;
+    width:min-content;    
+}
+
+
+
+option {
+    padding: 0.5rem;
+    /* width:min-content; */
+}
+
+
+input[type="submit"] {
+    border:none;
+    background: #162466;
+    color:white;
+    padding: 1rem;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    box-shadow: 4px 4px 4px #808080
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+
+input[type="date"] {
+    font: inherit;
+    padding: 0.5rem;
+}

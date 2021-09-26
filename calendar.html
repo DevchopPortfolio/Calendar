@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    
+    <link rel="stylesheet" href="calendar.css">
+    <script async src="calendar.js"></script>    
+</head>
+<body>
+    
+
+
+
+
+<!-- templates (not visible) -->
+
+    <div id="celltemplate">
+        <div id="cellmarkertemplate"></div>
+        <div id="cellcommenttemplate"></div>
+    </div>
+
+    <div id = "monthtemplate">
+        <span></span>
+    </div>
+
+    <form id="form" class ="invisible" onsubmit="submitted()" method="get" action="javascript:void(0);">
+        <!-- <input type="text" id="textinput" name="" value="" autocomplete="off" placeholder=""> -->
+        <textarea id="textinput" name="" value="" autocomplete="off" placeholder=""></textarea>
+    </form>
+
+
+
+
+
+<!-- uppergrid (contains the column headings) -->
+
+    <div id="uppergrid">
+
+        <section> </section>
+
+        <header>
+            <h2 class='weekdayheading'>Mon</h2>
+            <h2 class='weekdayheading'>Tue</h2>
+            <h2 class='weekdayheading'>Wed</h2>
+            <h2 class='weekdayheading'>Thu</h2>
+            <h2 class='weekdayheading'>Fri</h2>
+            <h2 class='weekdayheading'>Sat</h2>
+            <h2 class='weekdayheading'>Sun</h2>
+        </header>
+
+    </div>
+
+
+
+    
+
+<!-- lowergrid (contains everything except the column headings) -->
+
+    <div id="lowergrid">
+
+        <section id="sideframe"></section> 
+        <main></main>    
+
+    </div>
+
+    
+
+    
+
+</body>
+</html>

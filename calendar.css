@@ -1,0 +1,222 @@
+:root {
+    --colmonth1: hsl(180, 100%, 90%);
+    --colmarker1: hsl(180, 100%, 80%);
+
+    --colmonth2: hsl(200, 100%, 90%);    
+    --colmarker2: hsl(200, 100%, 80%);
+
+    --cellheight: 2.8rem;
+    --gapsize: 0.5rem;
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+#celltemplate,
+#monthtemplate,
+.invisible 
+{
+    display: none;
+}
+
+
+
+
+
+
+
+
+#uppergrid {
+    display: grid;
+    gap: 0;
+    grid-template-columns: 6rem 1fr;        
+}
+
+
+#lowergrid {
+    display: grid;
+    gap: 0;
+    grid-template-columns: 6rem 1fr;    
+    margin: 0 1rem;
+    margin-top: 5rem;
+}
+
+
+
+
+
+
+
+
+
+
+                                    /* UPPER GRID */
+
+#uppergrid {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;    
+    background: white;    
+    box-shadow: 0 3px 10px #00000080;
+    z-index: 2;
+}
+
+header {       
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--gapsize);
+}
+
+header h2 {        
+    background: #162466;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+    margin: 0.6rem 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+                                    /* LOWER GRID */
+
+
+
+
+
+/* left frame (sidebar) */
+
+#sideframe {        
+    padding-right: 1rem;
+}
+
+.monthcell {    
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    margin-bottom: var(--gapsize);
+    background: #371666;    
+    color: white;
+}
+
+.monthcell span {
+    font-size: 2rem;    
+}
+
+
+
+
+
+
+
+
+/* right frame */
+
+
+
+main {    
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: var(--cellheight);
+    gap: var(--gapsize);    
+}
+
+
+
+
+
+
+.cell {        
+    background: var(--colmonth1);       
+    display: flex;        
+    box-shadow: 2px 2px 5px #80808080    
+    /* border: 1px solid black;     */
+}
+
+.cell[data-month="Jan"],
+.cell[data-month="Mar"],
+.cell[data-month="May"],
+.cell[data-month="Jul"],
+.cell[data-month="Sep"],
+.cell[data-month="Nov"],
+.cell[data-month="Jan."]
+{
+    background: var(--colmonth2);
+}
+
+.cell:hover {
+    outline: 2px solid black;
+    cursor: text;
+}
+
+
+
+
+
+.cellmarker {
+    width: 1.3rem;
+    flex-shrink: 0;
+    background: var(--colmarker1);
+    overflow: hidden;    
+    font-weight: 600;
+    padding: 0 0.1rem;
+    text-align: center;    
+    line-height: var(--cellheight)
+}
+
+.cell[data-month="Jan"] .cellmarker,
+.cell[data-month="Mar"] .cellmarker,
+.cell[data-month="May"] .cellmarker,
+.cell[data-month="Jul"] .cellmarker,
+.cell[data-month="Sep"] .cellmarker,
+.cell[data-month="Nov"] .cellmarker,
+.cell[data-month="Jan."] .cellmarker {
+    background: var(--colmarker2);
+}
+
+
+
+
+
+
+.cellcomment {
+    display: inline-block;        
+    flex-grow: 1;
+    /* position: relative;     */
+    overflow: auto;      
+}
+
+
+#form {
+    height: var(--cellheight);
+}
+
+
+#textinput {            
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;   
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+    resize:none;    
+}

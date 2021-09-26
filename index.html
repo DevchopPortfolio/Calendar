@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Menu</title>
+
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+
+
+</head>
+<body>
+    
+
+    <header>
+        <h1>Procedural Calendar Generator</h1>
+    </header>
+    
+
+
+    <form action="javascript:void(0);" onsubmit=
+        "formsubmitted(selectstarton.value, selectleapyear.value, selectfavdate.value)"
+    >
+
+        <div id="formgrid">
+
+            <p>Year starts on</p>
+
+            <select name="selectstarton" id="" size="7">
+                <option value="0">Mon</option>
+                <option value="1">Tue</option>
+                <option value="2">Wed</option>
+                <option value="3">Thu</option>
+                <option value="4">Fri</option>
+                <option value="5">Sat</option>
+                <option value="6">Sun</option>
+            </select>
+
+
+            <p>Leap Year</p> 
+
+            <select name="selectleapyear" id="" size = "2">
+                <option value="28">Yes (28 days in Feb)</option>
+                <option value="29">No (29 days in Feb)</option>
+            </select>
+
+            <p>Your favourite day of the year</p>
+
+            <input type="date" name="selectfavdate" id="">
+
+        </div>  
+
+
+        <br>
+        
+        <input type="submit" value="Create Calendar">
+
+        <!-- <input type="hidden" name="redirect" value="./index.html"> -->
+
+
+
+    </form>
+
+
+
+
+
+
+</body>
+</html>
