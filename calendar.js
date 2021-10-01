@@ -1,13 +1,21 @@
 
+    
+
 //  variable that links to the currently active day cell
 let activecell
 
 
-// create links to element templates in html
-const celllink = document.querySelector('#celltemplate')      /**cell template */
-const monthlink = document.querySelector('#monthtemplate')    /**month template */
-const formlink = document.querySelector('#form')              /**form template */
-const inputlink = document.querySelector('#textinput')        /**text input template */
+// create links to elements in html
+const celllink = document.querySelector('#celltemplate')      /*cell template */
+const monthlink = document.querySelector('#monthtemplate')    /*month template */
+const formlink = document.querySelector('#form')              /*form template */
+const inputlink = document.querySelector('#textinput')        /*text input template */
+const infobarDaylink = document.querySelector('#infobar #weekday')      /*infobar weekday*/
+const infobarDatelink = document.querySelector('#infobar #date')        /*infobar date*/
+const infobarMonthlink = document.querySelector('#infobar #month')      /*infobar month*/
+const infobarCodelink = document.querySelector('#infobar #code')        /*infobar code*/
+const infobarWeeklink = document.querySelector('#infobar #week')        /*infobar code*/
+
 
 
 
@@ -16,12 +24,16 @@ const favmonth = Number(sessionStorage.getItem('favmonth'))
 const favday = Number(sessionStorage.getItem('favday'))
 
 
+
 // anatomy of a year
-const firstofjan = sessionStorage.getItem('starton')    //5
-const daysinfeb = sessionStorage.getItem('leapyear')   //28
+
+const firstofjan = sessionStorage.getItem('starton') || 0
+const daysinfeb = sessionStorage.getItem('leapyear') || 28      //short-circuit operators ensure blank values don't return null
+
 const dpm = [firstofjan, 31, daysinfeb, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31, 31]    //dpm = days per month
 const monthname = ['Dec.', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan.']
 const weekdayname = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+
 
 
 
@@ -130,8 +142,7 @@ function createcell (thisdate, thismonth, thisday, thisweek, thisdaycode) {
 
     // add a click event listener to new cell
     newcell.addEventListener('click', () => {        
-        formworker(newcell)
-        logger(newcell)
+        formworker(newcell)        
     })
 
     //append new cell to HTML doc
@@ -173,6 +184,15 @@ function formworker (thiscell) {
         //set keyboard focus to the form
         inputlink.focus()
 
+        //populate the infobar with this cell's metadata
+        infobarDaylink.innerText = weekdayname[thiscell.getAttribute('data-day') - 1 ]
+        infobarDatelink.innerText = thiscell.getAttribute('data-date')
+        infobarMonthlink.innerText = thiscell.getAttribute('data-month')
+        let daycode = Number( thiscell.getAttribute('data-code') ) - (firstofjan-1)
+        infobarCodelink.innerText = 'Day: ' + daycode
+        infobarWeeklink.innerText = 'Week: ' + thiscell.getAttribute('data-week')
+                      
+
     }
 
 }
@@ -203,24 +223,6 @@ inputlink.addEventListener('focusout', () => {
 
 
 
-
-
-
-
-
-
-
-// when a cell is clicked, console log its meta-data
-
-function logger(thiscell) {
-    console.log(            
-        weekdayname[thiscell.getAttribute('data-day') - 1 ],
-        thiscell.getAttribute('data-date'),
-        thiscell.getAttribute('data-month'),
-        '   week:' + thiscell.getAttribute('data-week'),
-        '   daycode: ' + thiscell.getAttribute('data-code')
-    )   
-}
 
 
 

@@ -15,6 +15,9 @@ function formsubmitted (starton, leapyear, favdate) {
     sessionStorage.setItem('favday', favday)
     
 
+
+
+
     location.href = "./calendar.html"
 
 }
