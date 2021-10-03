@@ -2,8 +2,7 @@
 // function is called when the user submits the form
 
 function formsubmitted (starton, leapyear, favdate) {
-    
-    
+        
     sessionStorage.setItem('starton', starton)
     
     sessionStorage.setItem('leapyear', leapyear)
@@ -14,10 +13,6 @@ function formsubmitted (starton, leapyear, favdate) {
     let favday = favdate.substring(8, 10)    
     sessionStorage.setItem('favday', favday)
     
-
-
-
-
     location.href = "./calendar.html"
 
 }
