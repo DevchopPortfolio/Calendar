@@ -85,6 +85,7 @@ header h2 {
     color: white;
 }
 
+/* text in sidebar */
 .monthcell span {
     font-size: 2rem;    
 }
@@ -107,6 +108,8 @@ main {
     /* border: 1px solid black;     */
 }
 
+
+/* cells of alternating months have alternating colours*/
 .cell[data-month="Jan"],
 .cell[data-month="Mar"],
 .cell[data-month="May"],
@@ -134,6 +137,7 @@ main {
     line-height: var(--cellheight)
 }
 
+/* cell markers of alternating months have alternating colours*/
 .cell[data-month="Jan"] .cellmarker,
 .cell[data-month="Mar"] .cellmarker,
 .cell[data-month="May"] .cellmarker,
