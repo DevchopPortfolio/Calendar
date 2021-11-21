@@ -152,11 +152,12 @@ main {
     display: inline-block;        
     flex-grow: 1;
     /* position: relative;     */
-    overflow: auto;      
+    overflow: auto;   
+    word-break:break-all; 
 }
 
 #form {
-    height: var(--cellheight);
+    height: var(--cellheight);    
 }
 
 #textinput {            

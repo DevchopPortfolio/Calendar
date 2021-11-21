@@ -180,7 +180,7 @@ inputlink.addEventListener('focusout', () => {
 // }
 
 
-// calculate value of 'span' or each month (how many weeks each month covers)
+// calculate value of 'span' for each month (how many weeks each month covers)
 
 for (let thismonth = 0; thismonth < 13; thismonth++) {    
     month[thismonth].span = month[thismonth+1].startsonweek - month[thismonth].startsonweek;
